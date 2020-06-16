@@ -3,4 +3,4 @@
 $ErrorActionPreference = 'Stop';
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-Install-BinFile -Name 'once' -Path (Join-Path (Join-Path $toolsDir 'bin') 'once.bat')
+Install-ChocolateyShortcut -ShortcutFilePath (Join-Path (Join-Path $Env:ChocolateyInstall 'bin') 'once.lnk') -TargetPath (Join-Path (Join-Path $toolsDir 'bin') 'once.bat')
